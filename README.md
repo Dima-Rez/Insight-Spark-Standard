@@ -1,4 +1,0 @@
-pandas
-streamlit
-openpyexcel
-plotlty
