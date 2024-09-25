@@ -1,4 +1,6 @@
-''' Student performance Visual for meetings and analysis '''
+''' Student performance Visual for meetings and analysis
+Built by : D. Rana 
+Version 2.1.1'''
 
 # importing modules
 import pandas as pd
@@ -7,14 +9,21 @@ import plotly.express as px
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 import openpyxl
-
+import io
+import base64
+import time
+import math
 
 st.set_page_config(page_title='Performance Tracker V1')
-st.header('Cognitra V1 🧑‍🏫')
+st.header(' Student Performance tracker©️  V1.1.1 🧑‍🏫')
 st.subheader('Analyse Student Performance in real time')
+st.write(' Built by D.Rana  ')
+st.write(' Code restricted and not be used without permission ')
+
 
 # File upload
 fileupload = st.file_uploader('Please upload your file here', type='XLSX')
+
 
 #file uploading conditioning
 if fileupload is None:
@@ -25,10 +34,13 @@ else:
         st.success('Data uploaded successfully')
 
         # Input of the roll number
+
         roll_num = st.number_input("Please enter the student's roll number")
 
         if roll_num in df['Roll Number'].values:
-            st.success('Loading......')
+            with st.spinner(text=' Searching '):
+                time.sleep(1)
+                st.success(' Roll number data present ')
 
             # Extracting the roll number data
             selectedroll = df[df['Roll Number'] == roll_num]
@@ -39,6 +51,17 @@ else:
 
             validselection = [selection for subject in selection if subject in df.columns]
             if validselection:
+                bar = st.progress(2)
+                time.sleep(2)
+                bar.progress(2)
+
+                with st.status("Loading data ...") as s:
+                    time.sleep(2)
+                    st.write("loading")
+
+
+
+
                 studentname = selectedroll['Name'].values[0]
                 splitname = studentname.split()[0]
                 st.write(f"{studentname} performance in selected subjects")
@@ -157,9 +180,9 @@ else:
                 st.plotly_chart(pie)
 
                 # Performance analysis report card
-                st.header(f"{splitname}'s Performance Analysis 🧠")
+                st.header(f"{splitname}'s Academics Analysis 🏫")
                 if strongestsubject_marks > 89:
-                    st.write(f"🎉 Congratulations {splitname} for scoring great in {strongestsubject}!")
+                    st.write(f"🎉 Congratulations {splitname} for scoring great in {strongestsubject}! keep it up ")
                 elif strongestsubject_marks >= 79:
                     st.write(f"🎉 Great job {splitname} for scoring well in {strongestsubject}!")
                 st.write(f"{splitname}, keep working on {weakestsubject}. Next time target for {weakestsubject_marks + 8}.")
@@ -167,15 +190,15 @@ else:
                 st.plotly_chart(fig_strongest)
                 st.plotly_chart(fig_weakest)
 
-                st.subheader("Strengths 💪")
+                st.header("Strengths 💪")
                 st.write(f"{splitname} scored highest in {strongestsubject}")
-                st.subheader("Areas for Improvement 📉")
+                st.header("Areas for Improvement 📉")
                 st.write(f"{splitname} needs to work more on {weakestsubject}")
 
                 # Calculate percentage
                 total_marks = student_performance['Marks'].sum()
                 percentage = (total_marks / 500) * 100
-                st.subheader(f"🟦 {splitname}'s percentage is {percentage:.2f}%")
+                st.subheader(f"📔 {splitname}'s Academic Score is {percentage:.2f}%")
 
                 if percentage >= 90:
                     st.write(f"Excellent job, {splitname}! Keep it up!")
@@ -183,6 +206,21 @@ else:
                     st.write(f"Good work, {splitname}. Next time, target for {percentage + 3:.2f}%!")
                 else:
                     st.write(f"Keep working hard, {splitname}. Next time, aim for {percentage + 3:.2f}%!")
+
+                # Loading attendance data
+                st.header(f" 📑 {splitname}'s  attendance insights ")
+                selected_attendance = selectedroll['attendance'].values
+                converted_attendance = int(selected_attendance)
+                st.write(f"{splitname}'s attendance percentage is  {converted_attendance} % ")
+
+                # Attencdance condtioning
+                if converted_attendance >= 90:
+                    st.write(f' Congratulations {splitname} for being so attentive keep it up ')
+                elif converted_attendance >=70<86:
+                    st.write(f"Congratulations {splitname} for being so attentive keep it up ")
+                else:
+                    st.write(f" {splitname} try to be little more attentive ")
+
 
             else:
                 st.warning("Please select subjects to visualize.")
