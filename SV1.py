@@ -12,18 +12,15 @@ import math
 
 # Set up Streamlit page
 st.set_page_config(page_title='Performance Tracker V1')
-st.header('Student Performance Tracker©️ V1.1.1 🧑‍🏫')
-st.subheader('Analyse Student Performance in real time')
-st.write('Built by D.Rana')
-st.write('Code restricted and not to be used without permission')
+st.header('Insight Spark')
+st.write('Analyse Student Performance in real time')
+
+fileupload = st.file_uploader('Please upload your file here', type='XLSX')
 
 # Display image below the file uploader if no file is uploaded
 placeholder = st.empty()
 with placeholder:
     st.image("https://lh4.googleusercontent.com/fq_EYl75fyrxKm5P8L1Moew8_qKm4UyMFEfwrC-W9dEr5HDqhTKd5qygl_GhHBhh7IilkB7A79mu_nUzpJb1PGJDeTowqH5efUdCYiKv5Nlpydevxeq0CX_tpKZ0IuTO-g=w1280")
-
-# File upload
-fileupload = st.file_uploader('Please upload your file here', type='XLSX')
 
 # File uploading and analysis
 if fileupload is None:
