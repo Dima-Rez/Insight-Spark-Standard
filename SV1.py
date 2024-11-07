@@ -12,8 +12,8 @@ import math
 
 # Set up Streamlit page
 st.set_page_config(page_title='Performance Tracker V1')
-st.header(' Insight spark ')
-st.subheader('Analyse Students Performance in real time')
+st.header('Student Performance Tracker©️ V1.1.1 🧑‍🏫')
+st.subheader('Analyse Student Performance in real time')
 st.write('Built by D.Rana')
 st.write('Code restricted and not to be used without permission')
 
