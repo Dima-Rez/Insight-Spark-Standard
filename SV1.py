@@ -11,8 +11,8 @@ import time
 import math
 
 # Set up Streamlit page
-st.set_page_config(page_title='Performance Tracker V1')
-st.header('Insight Spark')
+st.set_page_config(page_title='Insight Spark Science 🔬')
+st.header('Insight Spark 📈')
 st.write('Analyse Student Performance in real time')
 
 fileupload = st.file_uploader('Please upload your file here', type='XLSX')
