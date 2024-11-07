@@ -20,7 +20,7 @@ st.write('Code restricted and not to be used without permission')
 # Display image below the file uploader if no file is uploaded
 placeholder = st.empty()
 with placeholder:
-    st.image("https://lh6.googleusercontent.com/7eUqnENasB9pZ_fT49tQ7K1Ms9uZ5ZtYSvI8UXiOfi--xEshIAIsM5Kf9XibSwjiCZT5HHYaH1qAsTM6ANLzNggx963In4QjyYFLBCE4ORxhMpYYajACDpum25K36RM2sQ=w1280", caption="Upload your file to get started")
+    st.image("https://lh4.googleusercontent.com/fq_EYl75fyrxKm5P8L1Moew8_qKm4UyMFEfwrC-W9dEr5HDqhTKd5qygl_GhHBhh7IilkB7A79mu_nUzpJb1PGJDeTowqH5efUdCYiKv5Nlpydevxeq0CX_tpKZ0IuTO-g=w1280")
 
 # File upload
 fileupload = st.file_uploader('Please upload your file here', type='XLSX')
