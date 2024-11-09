@@ -11,10 +11,9 @@ import time
 import math
 
 st.set_page_config(page_title='Performance Tracker V1')
-st.header(' Student Performance tracker©️  V1.1.1 🧑‍🏫')
-st.subheader('Analyse Student Performance in real time')
-st.write(' Built by D.Rana  ')
-st.write(' Code restricted and not be used without permission ')
+st.header(' Insight Spark 📈')
+st.write('Analyse Student Performance in real time')
+
 
 # File upload
 fileupload = st.file_uploader('Please upload your file here', type='XLSX')
