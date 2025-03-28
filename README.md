@@ -1,7 +1,7 @@
 ![1](https://github.com/user-attachments/assets/fae272ef-9c34-41dc-ab1d-11ab27569b89)
 # Insight Spark 
 ## make reports out of excel in minutes
-![Video Demo]
+![Video Demo](https://youtu.be/gmbaiSpUGpo?si=ciNciMgJ0bRTEWOT)
 
 Insight Spark is a powerful analytics tool built using Streamlit, designed to help users visualize and analyze data effortlessly.
 Whether you're working with online retail data, food delivery trends, or Netflix viewing patterns, Insight Spark provides insightful visualizations and trends to aid decision-making.
