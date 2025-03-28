@@ -7,9 +7,9 @@ Whether you're working with online retail data, food delivery trends, or Netflix
 
 # 🚀 Features
 
-+📊 Interactive Data Visualizations – Generate dynamic charts and graphs.
-+📈 Trend Analysis – Identify patterns in datasets from various industries.
-+📂 Seamless File Upload – Supports CSV and Excel files for easy data import.
-+🔍 Exploratory Data Analysis (EDA) – Get quick insights into datasets.
-+🖼️ Image Placeholder – Displays a default image before data is uploaded.
-+🎨 User-Friendly UI – Simple and intuitive interface built with Streamlit
++Interactive Data Visualizations – Generate dynamic charts and graphs.
++Trend Analysis – Identify patterns in datasets from various industries.
++Seamless File Upload – Supports CSV and Excel files for easy data import.
++Exploratory Data Analysis (EDA) – Get quick insights into datasets.
++Image Placeholder – Displays a default image before data is uploaded.
++User-Friendly UI – Simple and intuitive interface built with Streamlit
